@@ -1,0 +1,6 @@
+framework module Pods_LDMacro_Example {
+  umbrella header "Pods-LDMacro_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}
