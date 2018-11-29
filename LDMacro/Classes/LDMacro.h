@@ -17,9 +17,19 @@
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 
 //nav height
-#define NAVIGATIONBAR_HEIGHT (64.0f+(([UIScreen mainScreen].bounds.size.height == 812)?24.0f:0.0f)) //导航条的高度
-#define TABBAR_HEIGHT        (([UIScreen mainScreen].bounds.size.height == 812)?83.0f:49.0f)  //工具栏高度
-#define STATUSBAR_HEIGHT     (([UIScreen mainScreen].bounds.size.height == 812)?44.0f:20.0f) //状态栏高度
+#define NAVIGATIONBAR_HEIGHT (64.0f+iphoneXTopInterval) //导航条的高度
+#define TABBAR_HEIGHT        (49.0f+iphoneXBottomInterval)  //工具栏高度
+#define STATUSBAR_HEIGHT     (20.0f+iphoneXTopInterval) //状态栏高度
+
+//iphone device version
+#define isIphone5 ([UIScreen mainScreen].bounds.size.width == 320)
+#define isIphone6 ([UIScreen mainScreen].bounds.size.width == 375)
+#define isIphone6p ([UIScreen mainScreen].bounds.size.width == 414)
+
+#define isIphoneX  (((int)((SCREEN_HEIGHT/SCREEN_WIDTH)*100) == 216)?YES:NO)
+
+#define iphoneXBottomInterval (isIphoneX?34:0)
+#define iphoneXTopInterval (isIphoneX?24:0)
 
 //adapt
 #define W(n)  ((n)* [UIScreen mainScreen].bounds.size.width / 375.0f)
